@@ -1,0 +1,284 @@
+@import "bourbon"
+@import "icon.sass"
+@import "mixins"
+
+$color: #0083a6
+$font: 'Montserrat', sans-serif
+
+html
+	box-sizing: border-box
+
+*,
+*::after,
+*::before
+	box-sizing: inherit
+	outline: none
+
+body
+	margin: 0	
+	overflow-x: hidden
+	font-family: $font
+	line-height: 1.4
+	font-size: 14px
+	background-color: #010a12
+	background-image: url(../img/bg.png)
+	background-repeat: no-repeat
+	background-position: 50% 0
+	background-attachment: fixed
+
+img
+	max-width: 100%	
+	border: none	
+	outline: none	
+
+a
+	border: none	
+	outline: none	
+
+ul
+	list-style-type: none	
+	margin: 0	
+	padding: 0
+
+%container
+	width: 100%
+	max-width: 970px	
+	padding: 0 15px
+	margin: 0 auto
+
+%grid
+	display: table
+	width: 100%
+	table-layout: fixed
+
+%part
+	display: table-cell
+	vertical-align: top
+
+.container
+	@extend %container
+
+.header
+		padding: 20px 0
+		&__logo,
+		&__name
+			display: table
+			margin: 0 auto
+		&__name
+			margin-top: 15px
+
+.main
+	background-color: $color
+	padding: 13px 10px 10px
+	border-radius: 13px
+	&__inner
+		background-color: #fff
+		border-radius: 13px
+		margin-top: 13px
+		position: relative
+		overflow: hidden
+		opacity: .99
+	&__breadcrumbs
+		padding: 0 50px
+	&__title
+		margin: 0
+		color: $color
+		font-size: 48px
+		line-height: 1
+		font-weight: 600
+		text-transform: uppercase
+	&__subtitle
+		margin: 0
+		color: #010510
+		font-size: 36px
+		font-weight: 600
+	&__lead
+		font-size: 18px
+		color: #8b8b8b
+		font-weight: 600
+		line-height: 1.5
+		margin: 25px 0 0
+		padding-bottom: 60px
+		position: relative
+		&::after
+			content: url(../img/line.png)
+			position: absolute
+			bottom: -10px
+			left: 50%
+			transform: translateX(-50%)
+	&__cardStack
+		margin-top: 60px
+		cursor: pointer
+		-webkit-tap-highlight-color: transparent
+	&__decor
+		position: absolute
+		z-index: -1
+		&::before
+			content: url(../img/decor.png)
+			display: block
+			font-size: 0
+		&--1
+			top: 0
+			left: 0
+		&--2
+			transform: rotate(90deg)
+			top: 0
+			right: 0
+		&--3
+			transform: rotate(180deg)
+			bottom: 0
+			right: 0
+		&--4
+			transform: rotate(270deg)
+			bottom: 0
+			left: 0
+	&__loading
+		display: none
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(255,255,255,.6)
+		background-image: url(../img/loading.gif)
+		background-repeat: no-repeat
+		background-position: 50% 50%
+	&__first
+		padding: 80px 70px 90px
+		text-align: center
+	&__second
+		display: none
+		padding: 85px 50px 130px
+	&__content
+		margin-top: 55px
+
+.breadcrumbs
+	font-size: 13px
+	color: #3bb2d2
+	text-overflow: ellipsis
+	overflow: hidden
+	white-space: nowrap
+	&__home
+		margin-right: 14px
+		&::before
+			content: url(../img/icon-home.png)
+			display: inline-block
+			vertical-align: middle
+			margin-right: 8px
+	&__current
+		&::before
+			content: url(../img/icon-arrow.png)
+			display: inline-block
+			margin-right: 14px
+
+.cards
+	&__result
+		font-size: 30px
+		font-weight: 600
+		color: #010510
+		text-align: center
+		line-height: 40px
+		margin: 0
+		span
+			font-size: 24px
+			display: block
+		strong
+			color: #d64747
+			font-weight: 600
+	&__list
+		margin-top: 30px
+	&__item
+		padding-left: 260px
+		overflow: auto
+		&+&
+			margin-top: 13px
+			padding-top: 20px
+			border-top: 1px dashed #e0e0e0
+	&__pic
+		margin-left: -260px
+		float: left
+	&__num
+		margin: 20px 0 15px
+		font-size: 50px
+		line-height: 1
+		font-weight: 600
+		color: #eaeaea
+	&__name
+		margin: 0
+		color: #010510
+		font-size: 24px
+		line-height: 1
+		font-weight: 600
+	&__text
+		font-size: 15px
+		color: #2f2d2d
+		font-size: 15px
+		line-height: 1.7
+		margin: 15px 0 0
+
+.content
+		&__title
+			text-transform: uppercase
+			color: #010510
+			font-weight: 600
+			font-size: 48px
+			margin: 0
+			b
+				font-size: 24px
+				color: $color
+				text-transform: initial
+				display: block
+		&__text
+			font-size: 15px
+			color: #2f2d2d
+			line-height: 1.7
+			margin: 15px 0 0
+			a
+				font-weight: 600
+				color: $color
+				&:hover
+					text-decoration: none
+		&__product
+			display: table
+			margin: 0 auto
+		&__caption
+			font-size: 36px
+			color: #010510
+			font-weight: 600
+			margin: 0
+		&__prize
+			font-size: 24px
+			color: #010510
+			font-weight: 600
+			line-height: 1.4
+			text-align: center
+			margin: 40px 0 25px
+		&__btn
+			background-color: #b29e53
+			border: 3px solid #fff
+			box-shadow:  0 0 0 2px #b29e53
+			border-radius: 8px
+			padding: 20px 40px
+			display: table
+			margin: 0 auto
+			font-family: $font
+			font-size: 20px
+			color: #fff
+			font-weight: 600
+			line-height: 1
+			text-decoration: none
+			cursor: pointer
+			text-align: center
+			transition: all .2s
+			&:hover
+				transform: scale(1.1)
+
+.footer
+		text-align: center
+		color: #999
+		margin: 50px 0
+
+
+//ALWAYS END
+@import "media"
