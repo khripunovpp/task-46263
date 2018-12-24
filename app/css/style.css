@@ -270,7 +270,7 @@ ul {
   font-size: 50px;
   line-height: 1;
   font-weight: 600;
-  color: #eaeaea;
+  color: #bdbaba;
 }
 
 .cards__name {
@@ -339,6 +339,15 @@ ul {
   line-height: 1.4;
   text-align: center;
   margin: 40px 0 25px;
+}
+
+.content__prize a {
+  font-weight: 600;
+  color: #0083a6;
+}
+
+.content__prize a:hover {
+  text-decoration: none;
 }
 
 .content__btn {
