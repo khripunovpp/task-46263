@@ -68,6 +68,17 @@ html
 									p.content__text На следующее утро без посторонних свидетелей, с двух сторон от амулета завяжите на шнурке узелки. При завязывании первого узелка, вспомните о приятных, ярких событиях связанных с удачей. При завязывании второго — о хороших событиях связанных с деньгами. После чего наденьте амулет на шею, закройте глаза, изо всех сил концентрируясь на положительном настрое около минуты.
 									p.content__text На этом все. Далее оберег начнет свою защиту от негативного развития события в вашей жизни.
 									p.content__prize Небольшой подарок. Пройдя по ссылке от нас, вы можете приобрести #[a(href="") Money&nbsp;Amulet] со скидкой
-									a.content__btn(href="") Купить Money&nbsp;Amulet 
+									form.form.content__form
+										.form__group
+											label.form__label Страна
+												select.form__field(name="country_code")#country_code_selector
+													option(value="") Раша
+										.form__group
+											label.form__label Ваше имя
+												input(type="text", name="name").form__field
+										.form__group
+											label.form__label Контактный телефон
+												input(type="tel", name="phone").form__field.only_number
+										button.form__btn.btn.js_submit Купить Money&nbsp;Amulet 
 				.footer &#169; Copyright #[span.ryear]
 		script(src="js/common.js")
